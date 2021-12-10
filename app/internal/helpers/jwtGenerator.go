@@ -1,10 +1,11 @@
 package helpers
 
 import (
-	"github.com/dgrijalva/jwt-go"
 	"os"
 	"strconv"
 	"time"
+
+	"github.com/dgrijalva/jwt-go"
 )
 
 // GenerateNewAccessToken func for generate a new Access token.

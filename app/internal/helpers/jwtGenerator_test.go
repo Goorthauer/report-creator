@@ -1,9 +1,10 @@
 package helpers
 
 import (
+	"testing"
+
 	"github.com/dgrijalva/jwt-go"
 	"github.com/stretchr/testify/assert"
-	"testing"
 )
 
 func TestGenerateNewAccessToken(t *testing.T) {
@@ -18,7 +19,7 @@ func TestGenerateNewAccessToken(t *testing.T) {
 
 	assert.NotNil(t, token)
 
-	token, err = jwt.Parse("", jwtKeyFunc)
+	_, err = jwt.Parse("", jwtKeyFunc)
 
 	assert.NotNil(t, err)
 

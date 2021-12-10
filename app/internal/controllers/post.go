@@ -5,9 +5,10 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"time"
+
 	"report-creator/app/internal/helpers"
 	"report-creator/app/internal/models"
-	"time"
 )
 
 // create func generate xlsx file.
@@ -27,7 +28,7 @@ func create(w http.ResponseWriter, r *http.Request) {
 	}
 	needJwt := os.Getenv("JWT_AUTORIZE")
 	if needJwt == "ON" {
-		err, status := beforeController(w, r)
+		status, err := beforeController(w, r)
 		if err != nil {
 			w.Header().Set("Content-Type", "application/json")
 			w.WriteHeader(status)

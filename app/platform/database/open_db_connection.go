@@ -1,9 +1,10 @@
 package database
 
 import (
-	"github.com/jmoiron/sqlx"
 	"log"
 	"os"
+
+	"github.com/jmoiron/sqlx"
 )
 
 var Connect *sqlx.DB

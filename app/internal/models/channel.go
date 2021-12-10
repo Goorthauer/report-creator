@@ -3,13 +3,15 @@ package models
 import (
 	"encoding/csv"
 	"fmt"
-	sq "github.com/Masterminds/squirrel"
-	"github.com/xuri/excelize/v2"
 	"log"
-	"report-creator/app/internal/helpers"
-	"report-creator/app/platform/database"
 	"sync"
 	"time"
+
+	sq "github.com/Masterminds/squirrel"
+	"github.com/xuri/excelize/v2"
+
+	"report-creator/app/internal/helpers"
+	"report-creator/app/platform/database"
 )
 
 type PageChunk struct {

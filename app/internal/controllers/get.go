@@ -1,9 +1,10 @@
 package controllers
 
 import (
+	"net/http"
+
 	"github.com/gorilla/mux"
 	"github.com/xuri/excelize/v2"
-	"net/http"
 )
 
 // report func gets file export.

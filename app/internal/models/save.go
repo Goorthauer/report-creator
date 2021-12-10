@@ -3,12 +3,14 @@ package models
 import (
 	"encoding/csv"
 	"fmt"
-	"github.com/xuri/excelize/v2"
 	"log"
 	"os"
-	"report-creator/app/internal/helpers"
 	"strconv"
 	"time"
+
+	"github.com/xuri/excelize/v2"
+
+	"report-creator/app/internal/helpers"
 )
 
 var MaxRowExcel = 1048576
@@ -125,12 +127,12 @@ func (model *Save) createXlsx(pageChan chan PageChunkInterface) bool {
 func (model *Save) createCsv(pageChan chan PageChunkInterface) bool {
 	fileName := "files/" + model.ShortFileName + ".csv"
 	f, err := os.Create(fileName)
-	defer func() {
-		_ = f.Close()
-	}()
 	if err != nil {
 		log.Fatalln("failed to open file", err)
 	}
+	defer func() {
+		_ = f.Close()
+	}()
 	writer := csv.NewWriter(f)
 	writer.Comma = '\t'
 	defer writer.Flush()

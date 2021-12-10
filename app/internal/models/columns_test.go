@@ -1,9 +1,10 @@
 package models
 
 import (
-	"github.com/stretchr/testify/assert"
 	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestColumnsMapAppend(t *testing.T) {
@@ -121,7 +122,7 @@ func TestColumnMapGetField(t *testing.T) {
 	assert.Equal(t, true, ok)
 	assert.Equal(t, "Ид", secondTest)
 
-	ThreeTest, ok := test.getField("Format")
+	threeTest, ok := test.getField("Format")
 	assert.Equal(t, true, ok)
-	assert.Equal(t, "integer", ThreeTest)
+	assert.Equal(t, "integer", threeTest)
 }

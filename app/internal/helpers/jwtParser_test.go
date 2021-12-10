@@ -1,11 +1,12 @@
 package helpers
 
 import (
-	"github.com/dgrijalva/jwt-go"
-	"github.com/stretchr/testify/assert"
 	"net/http"
 	"testing"
 	"time"
+
+	"github.com/dgrijalva/jwt-go"
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_FullJwtParser(t *testing.T) {

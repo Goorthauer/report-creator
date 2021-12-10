@@ -1,10 +1,11 @@
 package helpers
 
 import (
-	"github.com/dgrijalva/jwt-go"
 	"net/http"
 	"os"
 	"strings"
+
+	"github.com/dgrijalva/jwt-go"
 )
 
 // TokenMetadata struct to describe metadata in JWT.

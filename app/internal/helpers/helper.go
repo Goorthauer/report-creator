@@ -3,7 +3,7 @@ package helpers
 import (
 	"fmt"
 	"net/http"
-	"net/url"
+	netUrl "net/url"
 	"os"
 	"reflect"
 	"strings"
@@ -59,12 +59,13 @@ func InterfaceToMap(ci []interface{}) []string {
 }
 
 //SendPostMessage отправка POST запроса по адресу
-func SendPostMessage(url string, data url.Values) {
+func SendPostMessage(url string, data netUrl.Values) {
 	go func() {
-		_, err := http.PostForm(url, data)
+		resp, err := http.PostForm(url, data)
 		if err != nil {
 			fmt.Println(err)
 			return
 		}
+		defer resp.Body.Close()
 	}()
 }

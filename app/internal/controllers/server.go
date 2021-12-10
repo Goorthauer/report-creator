@@ -2,13 +2,15 @@ package controllers
 
 import (
 	"fmt"
-	"github.com/joho/godotenv"
 	"log"
 	"net/http"
 	"os"
+	"strconv"
+
+	"github.com/joho/godotenv"
+
 	"report-creator/app/internal/models"
 	"report-creator/app/platform/database"
-	"strconv"
 )
 
 func StartServer() {
@@ -18,11 +20,11 @@ func StartServer() {
 		log.Fatal("Error loading .env file")
 	}
 	_ = os.Mkdir("files", 0755)
-	MaxWorkerPool, err := strconv.Atoi(os.Getenv("MAX_COUNT_WORKER"))
+	maxWorkerPool, err := strconv.Atoi(os.Getenv("MAX_COUNT_WORKER"))
 	if err != nil {
 		fmt.Println(err)
 	}
-	models.WorkerPull = make(chan struct{}, MaxWorkerPool)
+	models.WorkerPull = make(chan struct{}, maxWorkerPool)
 	if os.Getenv("AUTO_DELETE_MODE") == "ON" {
 		go BeginTicker()
 	}

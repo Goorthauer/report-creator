@@ -2,9 +2,10 @@ package models
 
 import (
 	"fmt"
-	"github.com/xuri/excelize/v2"
 	"log"
 	"strings"
+
+	"github.com/xuri/excelize/v2"
 )
 
 //FileStyle стили генерация стилей для определенного XLSX файла

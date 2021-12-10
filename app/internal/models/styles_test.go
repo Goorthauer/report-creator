@@ -1,9 +1,10 @@
 package models
 
 import (
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/xuri/excelize/v2"
-	"testing"
 )
 
 func TestStyleGetCustomNumStyle(t *testing.T) {
@@ -15,15 +16,15 @@ func TestStyleGetCustomNumStyle(t *testing.T) {
 	secondTest := newStyle.GetStyle("date")
 	assert.Equal(t, 2, secondTest)
 
-	ThreeTest := newStyle.GetStyle("time")
-	assert.Equal(t, 3, ThreeTest)
+	threeTest := newStyle.GetStyle("time")
+	assert.Equal(t, 3, threeTest)
 
-	FourTest := newStyle.GetStyle("currency")
-	assert.Equal(t, 4, FourTest)
+	fourTest := newStyle.GetStyle("currency")
+	assert.Equal(t, 4, fourTest)
 
-	FiveTest := newStyle.GetStyle("percent")
-	assert.Equal(t, 5, FiveTest)
+	fiveTest := newStyle.GetStyle("percent")
+	assert.Equal(t, 5, fiveTest)
 
-	SixTest := newStyle.GetStyle("")
-	assert.Equal(t, 6, SixTest)
+	sixTest := newStyle.GetStyle("")
+	assert.Equal(t, 6, sixTest)
 }
